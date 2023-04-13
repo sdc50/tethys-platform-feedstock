@@ -1,5 +1,5 @@
 {% set name = "tethys-platform" %}
-{% set version = "3.4.3" %}
+{% set version = "4.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/tethysplatform/tethys/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 3775d5599e756206204e09ca9a2114c8866fad7fd29999b256343c847ada3b1f
+  sha256: f729907dc159da9949849f798f97b00b36f2ee9fa30d83b469568e8e3f9d1510
 
 build:
   noarch: python
@@ -90,7 +90,7 @@ test:
 
 about:
   home: http://www.tethysplatform.org/
-  summary: 'A development platform for creating geospatial and scientific web applications.'
+  summary: A development platform for creating geospatial and scientific web applications.
   description: |
     Tethys Platform has been designed to lower the barrier to geospatial and 
     scientific web app development. Use it to deliver your models and data as 
