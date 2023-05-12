@@ -20,7 +20,7 @@ requirements:
     - python >=3.6
     - pip
     - setuptools
-    - pbr
+    - setuptools_scm
   run:
     - python >=3.7
     - pycrypto
@@ -87,7 +87,7 @@ test:
   commands:
     - tethys version
     - tethys gen portal_config --overwrite
-    - tethys scaffold --defaults --overwrite
+    - tethys scaffold --defaults --overwrite test_app
 
 about:
   home: http://www.tethysplatform.org/
