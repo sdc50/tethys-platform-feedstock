@@ -22,7 +22,7 @@ requirements:
     - setuptools
     - pbr
   run:
-    - python
+    - python >=3.7
     - pycrypto
     - pyopenssl
     - docker-py
@@ -33,22 +33,22 @@ requirements:
     - geoalchemy2
     - plotly
     - bokeh
-    - tethys_dataset_services>=2.0.0
+    - tethys_dataset_services >=2.0.0
     - hs_restclient
     - owslib
     - requests
     - dask
-    - tethys_dask_scheduler>=1.0.2
+    - tethys_dask_scheduler >=1.0.2
     - service_identity
     - condorpy
     - siphon
     - python-jose
-    - pyjwt<2.0.0
+    - pyjwt <2.0.0
     - arrow
     - isodate
-    - django=3.2.*
-    - channels=3.*
-    - daphne=3.*
+    - django =3.2.*
+    - channels =3.*
+    - daphne =3.*
     - django-analytical
     - django-axes
     - django-filter
@@ -90,7 +90,7 @@ test:
 
 about:
   home: http://www.tethysplatform.org/
-  summary: 'A development platform for creating geospatial and scientific web applications.'
+  summary: A development platform for creating geospatial and scientific web applications.
   description: |
     Tethys Platform has been designed to lower the barrier to geospatial and 
     scientific web app development. Use it to deliver your models and data as 
