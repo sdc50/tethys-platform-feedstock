@@ -23,16 +23,17 @@ requirements:
     - setuptools_scm
   run:
     - python >=3.7
-    - pycrypto
+    - bcrypt
+    - PyShp
     - pyopenssl
     - docker-py
     - distro
     - postgresql
     - psycopg2
-    - sqlalchemy
+    - sqlalchemy =1.*
     - geoalchemy2
     - plotly
-    - bokeh
+    - bokeh <3
     - tethys_dataset_services >=2.0.0
     - hs_restclient
     - owslib
@@ -43,7 +44,7 @@ requirements:
     - condorpy
     - siphon
     - python-jose
-    - pyjwt <2.0.0
+    - pyjwt
     - arrow
     - isodate
     - django =3.2.*
@@ -54,22 +55,30 @@ requirements:
     - django-filter
     - djangorestframework
     - django-bootstrap5
+    - django-cors-headers
     - django-model-utils
     - django-guardian
     - django-gravatar2
+    - django-json-widget
     - django-mfa2
     - django-recaptcha2
     - django-simple-captcha
     - django-session-security
     - django-termsandconditions
     - social-auth-app-django
+    - selenium
+    - coverage
+    - factory_boy
     - pillow
     - pip
     - future
+    - flake8
+    - flake8-bugbear
     - git
     - setuptools_scm
     - openssl
     - conda
+    - conda-libmamba-solver
 
 test:
   requires:
