@@ -14,6 +14,9 @@ build:
   number: 0
   entry_points:
     - tethys = tethys_cli:tethys_command
+  script_env:
+    - SETUPTOOLS_SCM_PRETEND_VERSION={{version}}
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
