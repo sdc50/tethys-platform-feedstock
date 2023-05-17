@@ -1,5 +1,5 @@
 {% set name = "tethys-platform" %}
-{% set version = "4.0.2" %}
+{% set version = "4.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,16 @@ package:
 
 source:
   url: https://github.com/tethysplatform/tethys/archive/refs/tags/{{ version }}.tar.gz
-  sha256: f729907dc159da9949849f798f97b00b36f2ee9fa30d83b469568e8e3f9d1510
+  sha256: 466cd13770c6660f7b5e460daaf6e96fcba5d92cedcd93af8e0ccb9e6ee36406
 
 build:
   noarch: python
   number: 0
   entry_points:
     - tethys = tethys_cli:tethys_command
+  script_env:
+    - SETUPTOOLS_SCM_PRETEND_VERSION={{version}}
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
@@ -23,16 +26,17 @@ requirements:
     - setuptools_scm
   run:
     - python >=3.7
-    - pycrypto
+    - bcrypt
+    - PyShp
     - pyopenssl
     - docker-py
     - distro
     - postgresql
     - psycopg2
-    - sqlalchemy
+    - sqlalchemy =1.*
     - geoalchemy2
     - plotly
-    - bokeh
+    - bokeh <3
     - tethys_dataset_services >=2.0.0
     - hs_restclient
     - owslib
@@ -43,7 +47,7 @@ requirements:
     - condorpy
     - siphon
     - python-jose
-    - pyjwt <2.0.0
+    - pyjwt
     - arrow
     - isodate
     - django =3.2.*
@@ -54,22 +58,30 @@ requirements:
     - django-filter
     - djangorestframework
     - django-bootstrap5
+    - django-cors-headers
     - django-model-utils
     - django-guardian
     - django-gravatar2
+    - django-json-widget
     - django-mfa2
     - django-recaptcha2
     - django-simple-captcha
     - django-session-security
     - django-termsandconditions
     - social-auth-app-django
+    - selenium
+    - coverage
+    - factory_boy
     - pillow
     - pip
     - future
+    - flake8
+    - flake8-bugbear
     - git
     - setuptools_scm
     - openssl
     - conda
+    - conda-libmamba-solver
 
 test:
   requires:
