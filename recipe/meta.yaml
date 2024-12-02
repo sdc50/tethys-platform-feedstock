@@ -1,5 +1,5 @@
 {% set name = "tethys-platform" %}
-{% set version = "4.2.3" %}
+{% set version = "4.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/tethysplatform/tethys/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 4a351d7a4f88a1e3b9817d4fb61c63fd699a94db769a421542f1d4be8e8fc708
+  sha256: a272ab2ad314232d552cf935c65966d0941add97f0c262057b55297eb90a8382
 
 build:
   noarch: python
@@ -20,68 +20,57 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.10
     - pip
     - setuptools
     - setuptools_scm
   run:
-    - python >=3.7
+    - python >=3.8
+    - django>=3.2,<6
+    - channels
+    - daphne
+    - setuptools_scm
+    - pip
+    - requests
     - bcrypt
+    - pyyaml
+    - jinja2
+    - django-bootstrap5
+    - django-model-utils
+    - django-guardian
+    - django-cors-headers
+    - django-session-security
+    - django-axes
+    - django-gravatar2
+    - django-simple-captcha
+    - django-mfa2
+    - django-recaptcha
+    - social-auth-app-django
+    - hs_restclient 
+    - python-jose
+    - django-oauth-toolkit
+    - arrow
+    - isodate
+    - django-termsandconditions
+    - django-analytical
+    - django-json-widget
+    - djangorestframework
     - PyShp
-    - pyopenssl
     - docker-py
-    - distro
+    - conda
+    - conda-libmamba-solver
     - postgresql
-    - psycopg2
-    - sqlalchemy =1.*
+    - psycopg2 
+    - sqlalchemy=1.*
     - geoalchemy2
     - plotly
     - bokeh
-    - tethys_dataset_services >=2.0.0
-    - hs_restclient
-    - owslib
-    - requests
     - dask
-    - tethys_dask_scheduler >=1.0.2
-    - service_identity
     - condorpy
+    - tethys_dask_scheduler>=1.0.2
+    - tethys_dataset_services>=2.0.0
+    - owslib 
     - siphon
-    - python-jose
-    - pyjwt
-    - arrow
-    - isodate
-    - django =3.2.*
-    - channels =3.*
-    - daphne =3.*
-    - django-analytical
-    - django-axes
-    - django-filter
-    - djangorestframework
-    - django-bootstrap5
-    - django-cors-headers
-    - django-model-utils
-    - django-guardian
-    - django-gravatar2
-    - django-json-widget
-    - django-mfa2
-    - django-recaptcha2
-    - django-simple-captcha
-    - django-session-security
-    - django-termsandconditions
-    - social-auth-app-django
-    - selenium
-    - coverage
-    - factory_boy
-    - pillow
-    - pip
-    - future
-    - flake8
-    - flake8-bugbear
-    - git
-    - setuptools_scm
-    - openssl
-    - conda
-    - conda-libmamba-solver
 
 test:
   requires:
